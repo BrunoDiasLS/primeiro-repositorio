@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * Crie um algoritmo para ler N números, some-os e faça a média entre os números
+         */
+         let media = 0
+         let soma = 0
+         let numeros = parseFloat(prompt('Quantos numeros deseja?'))
+
+         for (let i = 1; i <= numeros; i++) {
+             let valor = parseFloat(prompt('Digite um valor'))
+             soma = soma + valor
+        }
+
+        media = soma / numeros
+        alert(`A média é: ${media}`)
+
+
+
+    </script>
+</body>
+
+</html>
