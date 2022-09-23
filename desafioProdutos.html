@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio produtos</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Crie um programa que pergunte quantos produtos um cliente pegou e depois peça para que ele informe
+        o preço de cada produto. Ao possuir o valor de cada produto, faça a soma total da compra e
+        informe o maior e o menor preço que foi informado
+        */
+       const qtdProdutos = parseInt(prompt('Informe a quantidade de produtos'))
+
+       // Ler o preço de cada produto e armazenar em um array
+       const precosProdutos = []
+
+       for (let i = 0; i < qtdProdutos; i++) {
+        let preco = parseFloat(prompt('Digite o preço do produto'))
+        precosProdutos[i] = preco  
+       }
+
+       let soma = 0
+
+        for (let preco of precosProdutos) {
+            soma += preco
+        }
+
+        let min = Infinity
+        let maior = 0
+        for (let preco of precosProdutos ) {
+            if(preco < min) {
+                min = preco
+            }
+            if (preco > maior) {
+                maior = preco
+            }
+        }
+     
+        
+
+        alert(`O preço final a pagar é de ${soma}, O menor valor é ${min}, O maior preço é ${maior}`)
+
+    </script>
+</body>
+
+</html>
