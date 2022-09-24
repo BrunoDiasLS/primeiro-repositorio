@@ -10,7 +10,18 @@
 </head>
 <body>
     <script>
-        let numeros = parseInt(prompt())
+       let valor = [5]
+        for (let i = 0; i < 5; i++) {
+            let num = parseInt(prompt('Digite 20 valores inteiros sem repetí-los. '))
+            while (valor.includes(num)) {
+                num = parseInt(prompt('Número repetido. Digite outro.'))
+            }
+            valor[i] = num
+        }
+        for(let numero of valor) {
+            document.write(`<p>${numero}</p>`)
+        }
+        
     </script>
 </body>
 </html>

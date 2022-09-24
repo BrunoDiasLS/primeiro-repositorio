@@ -4,3 +4,34 @@ b) Quais os números pares
 c) A quantidade de números ímpares
 d) Quais os números ímpares
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let numeros = []  
+    let par = []
+    let impar = []
+        let pares = 0, impares = 0
+        for (let i = 0; i < 6; i++) {
+            numeros [i]= parseInt(prompt('Digite 6 Números . '))
+        }
+        for (let num of numeros) {
+            if(num % 2 == 0){
+                par.push(num)
+                pares++
+            } else { 
+                impar.push(num)
+                impares++
+            }
+        }
+        alert('Total de ' + pares + ' números pares: ' + par + ' e ' + impares + ' impares: ' + impar + '.')
+        </script>
+</body>
+</html>
