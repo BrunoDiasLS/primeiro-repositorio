@@ -15,23 +15,53 @@ d) Quais os números ímpares
 </head>
 <body>
     <script>
-    let numeros = []  
-    let par = []
-    let impar = []
-        let pares = 0, impares = 0
-        for (let i = 0; i < 6; i++) {
-            numeros [i]= parseInt(prompt('Digite 6 Números . '))
-        }
-        for (let num of numeros) {
-            if(num % 2 == 0){
-                par.push(num)
-                pares++
-            } else { 
-                impar.push(num)
-                impares++
+    // let numeros = []  
+    // let par = []
+    // let impar = []
+    //     let pares = 0, impares = 0
+    //     for (let i = 0; i < 6; i++) {
+    //         numeros [i]= parseInt(prompt('Digite 6 Números . '))
+    //     }
+    //     for (let num of numeros) {
+    //         if(num % 2 == 0){
+    //             par.push(num)
+    //             pares++
+    //         } else { 
+    //             impar.push(num)
+    //             impares++
+    //         }
+    //     }
+    //     alert('Total de ' + pares + ' números pares: ' + par + ' e ' + impares + ' impares: ' + impar + '.')
+
+            const nums = []
+
+            // Criar um loop que exexuta 6 vezes
+            for(let i = 1; i <= 6; i++){
+                const n = parseInt(prompt(`Digite o ${i}º número`))
+                nums.push(n)
             }
-        }
-        alert('Total de ' + pares + ' números pares: ' + par + ' e ' + impares + ' impares: ' + impar + '.')
+            // separar os pares dos impares
+            const pares = []
+            const impares = []
+            
+            //percorrer o array com os numeros informados
+            //Criar uma varial que vai guardar os valores de cada posição dp array 
+
+            for (let numero of nums){
+                /**
+                 * Separa os valores pares dos impares
+                 * colocando cada valor no seu respectivo array
+                */
+               if (numero % 2 == 0){
+                pares.push(numero)
+               } else{
+                impares.push(numero)
+               }
+            }
+
+            alert(`Nós temos ${pares.length} valores pares: ${pares.join(', ')}`)
+            alert(`Nós temos ${impares.length} valores impares: ${impares.join(`, `)}`)
+
         </script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 6. Escreva um algoritmo que leia um valor inicial A e uma razão R e imprima uma seqüência em
+            P.A. contendo 10 valores.
+        */
+        
+        let elemento = parseInt(prompt('Digite o primeiro elemento da PG'))
+        let razao = parseInt(prompt('Digite a razão da PG'))
+        document.write('\n Elemento ' + 1 + ': ' + elemento )
+
+        for(i = 0; i < 9 ; i++){
+            elemento = elemento * razao
+            document.write(' Elemento ' + (i + 2) + ': ' + elemento)
+        }
+        
+        </script>
+</body>
+</html>
