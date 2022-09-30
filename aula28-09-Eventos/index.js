@@ -9,19 +9,21 @@ function mostrarAlerta() {
     divAlerta.classList.add('mostrar')
    
 }
-
+function clicar (){
+    contador ++;
+    conta.innerText = contador;
+}
 
 function fecharAlerta () {
     //classList.remove() remove uma classe dinamicamente de dentro de um elemento HTML
     const divAlerta = document.getElementById('alerta')
     divAlerta.classList.remove('mostrar') 
-    contador ++;
-    btnFechar.innerHTML = contador;
     
 }
 
 const btnMostrar = document.getElementById('mostrar')
 const btnFechar = document.getElementById('fechar')
+const conta =document.getElementsByTagName('p')[0]
 
 
 // add.EventListener é um método que te permite ouvir eventos do HTML pelo Javascript
