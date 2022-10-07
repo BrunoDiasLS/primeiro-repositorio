@@ -6,9 +6,25 @@
 // Recupera elementos HTML a partir do nome
 const todoForm = document.getElementById('todo-form')
 const todos = []
+let importante
+let medio
+let facil
+let selectedSize
 
-todoForm.addEventListener('submit', function(evento){
-    evento.preventDefault() 
+
+todoForm.addEventListener('submit', function (evento) {
+    importante = document.querySelectorAll(".importante")
+    medio = document.querySelector(".medio")
+    facil = document.querySelector(".facil")
+
+
+
+
+
+
+
+
+    evento.preventDefault()
     evento.stopPropagation()
     /**
      * querySelector recupera o primeiro elemento que atenda
@@ -22,14 +38,15 @@ todoForm.addEventListener('submit', function(evento){
     todos.push(todoInput.value)
     todoInput.value = ''
     renderizarTodos()
-    
+
 })
 
-function renderizarTodos(){
+function renderizarTodos() {
     const todosListSection = document.querySelector('#todos-list')
+
     todosListSection.innerHTML = ''
 
-    for(let tarefa of todos){
+    for (let tarefa of todos) {
         const divCard = document.createElement('div')
         divCard.classList.add('card', 'bg-warning')
 
@@ -40,6 +57,9 @@ function renderizarTodos(){
         pTodoText.classList.add('todo-text', 'flex-grow-1', 'text-truncate')
 
         pTodoText.innerText = tarefa
+
+
+
 
         const btnDelete = document.createElement('button')
         btnDelete.classList.add('btn', 'delete-todo')
@@ -63,18 +83,39 @@ function renderizarTodos(){
         spanIcon.classList.add('material-symbols-outlined')
         spanIcon.innerText = 'delete'
 
+
+        let icone
+        if (importante.checked) {
+            selectedSize = importante.value
+            icone = document.createElement('span')
+            icone.classList.add('material-symbols-outlined', 'iconeVermelho')
+            icone.innerText = 'circle'
+
+        } else if (medio.checked) {
+            selectedSize = medio.value
+            icone = document.createElement('span')
+            icone.classList.add('material-symbols-outlined', 'iconeAmarelo')
+            icone.innerText = 'circle'
+        } else {
+            selectedSize = facil.value
+            icone = document.createElement('span')
+            icone.classList.add('material-symbols-outlined', 'iconeVerde')
+            icone.innerText = 'circle'
+        }
+
+
         /**
          * appendChild serve pra colocar novos elementos HTML dentro de outro
          */
 
         btnDelete.appendChild(spanIcon)
-         /**
-         * append serve pra colocar um ou mais elementos HTML dentro de outro
-         */
-        divCardBody.append(pTodoText, btnDelete)
+        /**
+        * append serve pra colocar um ou mais elementos HTML dentro de outro
+        */
+        divCardBody.append(pTodoText, icone, btnDelete)
         divCard.appendChild(divCardBody)
         todosListSection.appendChild(divCard)
-        
-        
+
+
     }
 }
